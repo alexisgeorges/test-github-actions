@@ -13,11 +13,9 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:       
+      - uses: actions/checkout@v1
       - name: Set git config
         run: |
           git config --global user.name Alexis
@@ -27,6 +25,5 @@ jobs:
         run: |
           echo "$(ls ./)"
           echo "$(ls)"
-          cat script.sh
       - name: Run script update-packages
         run: bash ./script.sh
