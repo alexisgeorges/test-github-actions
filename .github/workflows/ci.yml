@@ -18,6 +18,11 @@ jobs:
       matrix:
         os: [ubuntu-latest, macOS-latest]
     steps:
+      - name: Set git config
+        run: |
+          git config user.name Alexis
+          git config user.email alexis@georges.brussels
+
       - name: List git config
         run: |
           git config user.name
