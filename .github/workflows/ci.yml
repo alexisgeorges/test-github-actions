@@ -17,9 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
-    steps:
-      - name: test
-        
+    steps:        
       - name: Set git config
         run: |
           git config --global user.name Alexis
