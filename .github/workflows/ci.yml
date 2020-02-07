@@ -16,14 +16,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
     steps:       
       - name: Set git config
         run: |
-          git config user.name Alexis
-          git config user.email alexis@georges.brussels
+          git config --global user.name Alexis
+          git config --global user.email alexis@georges.brussels
 
-      - name: List git config
+      - name: List files
         run: |
-          git config user.name
-          git config user.email
+          echo "$(ls ./)"
+          echo "$(ls)"
+          cat script.sh
+      - name: Run script update-packages
+        run: bash ./script.sh
