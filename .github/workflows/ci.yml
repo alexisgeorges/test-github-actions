@@ -25,5 +25,12 @@ jobs:
         run: |
           echo "$(ls ./)"
           echo "$(ls)"
+          cat script.sh
+
       - name: Run script update-packages
         run: bash ./script.sh
+      
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

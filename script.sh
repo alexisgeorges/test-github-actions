@@ -7,6 +7,9 @@ readonly currentDir=$(
     pwd
 )
 readonly SCRIPTS_LOCATION=$currentDir
-readonly rootDir="${currentDir}/.."
+readonly rootDir="${currentDir}"
 
-echo "this is a test"
+echo "this is a test" > $rootDir/test.md
+
+git add $rootDir/.
+git commit -m "this is a test"
